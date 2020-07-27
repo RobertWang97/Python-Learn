@@ -30,7 +30,7 @@ class MySpider(scrapy.Spider):
     allowed_domains = ["baidu.com"]
     # 填写爬取地址
     start_urls = [
-        "http://tieba.baidu.com/f?kw=%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB&ie=utf-8",
+        "https://tieba.baidu.com/f?ie=utf-8&kw=%E5%9B%BE%E5%90%A7&ie=utf-8",
     ]
 
     # 编写爬取方法
