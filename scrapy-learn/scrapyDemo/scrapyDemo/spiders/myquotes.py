@@ -1,8 +1,8 @@
 import scrapy
 
 
-class QuotesSpider(scrapy.Spider):
-    name = "quotes"
+class MyQuotes(scrapy.Spider):
+    name = "myquotes"
 
     def start_requests(self):
         urls = [
@@ -14,8 +14,7 @@ class QuotesSpider(scrapy.Spider):
             yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
-        page = response.url.split("/")[-2]
-        filename = 'quotes-%s.html' % page
+        filename = response.url.split("/")[-2]
+        # filename = 'quotes-%s.html' % page
         with open(filename, 'wb') as f:
-            f.write = f.write(response.body)
-        self.log('Saved file %s' % filename)
+            f.write(response.body)
