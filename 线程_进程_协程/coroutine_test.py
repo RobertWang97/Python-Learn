@@ -1,5 +1,7 @@
+import time
 def func():
-    html = yield 1
+    html = yield "http://projectsedu.com"
+    print(html)
     yield 2
     yield 3
     return "bobby"
@@ -7,7 +9,9 @@ def func():
 
 if __name__ == "__main__":
     f = func()
-    print(next(f))
-    print(next(f))
-    print(next(f))
+    url = next(f)
+    print(url)
+    html = "bobby"
+    time.sleep(4)
+    f.send(html)
     print(next(f))
